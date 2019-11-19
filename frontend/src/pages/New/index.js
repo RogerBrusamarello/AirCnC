@@ -49,7 +49,7 @@ export default function New({ history }) {
                 onChange={event => setCompany(event.target.value)}
             />
 
-            <label htmlFor="techs">TECNOLOGIAS *<spa>(separadas por vírgula)</spa></label>
+            <label htmlFor="techs">TECNOLOGIAS *<span>(separadas por vírgula)</span></label>
             <input
                 id="techs"
                 placeholder="Qual tecnologias usam?"
@@ -57,7 +57,7 @@ export default function New({ history }) {
                 onChange={event => setTechs(event.target.value)}
             />
 
-            <label htmlFor="techs">VALOR DA DIÁRIA *<spa>(em branco para GRATUITO)</spa></label>
+            <label htmlFor="techs">VALOR DA DIÁRIA *<span>(em branco para GRATUITO)</span></label>
             <input
                 id="price"
                 placeholder="Valor cobrado por dia"

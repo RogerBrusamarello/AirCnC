@@ -1,22 +1,21 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login({ history }) { 
+export default function Login({ history }) {
     const [email, setEmail] = useState('');
 
-        // inativa o auto load da page quando da o submit
-        async function handleSubmit(event){
-            event.preventDefault();
-  
+    // inativa o auto load da page quando da o submit
+    async function handleSubmit(event) {
+        event.preventDefault();
 
-    // armazena a reposta da chamada api
-    const response = await api.post('/sessions', { email });
+        // armazena a reposta da chamada api
+        const response = await api.post('/sessions', { email });
 
-    const { _id } = response.data;
+        const { _id } = response.data;
 
-    localStorage.setItem('user', _id);
+        localStorage.setItem('user', _id);
 
-    history.push('/dashboard');
+        history.push('/dashboard');
     }
 
     return (
@@ -27,9 +26,9 @@ export default function Login({ history }) {
 
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">E-MAIL*</label>
-                <input 
+                <input
                     type="email"
-                    id="email" 
+                    id="email"
                     placeholder="Seu melhor e-mail"
                     value={email}
                     onChange={event => setEmail(event.target.value)}
@@ -38,5 +37,5 @@ export default function Login({ history }) {
             </form>
         </>
     );
-    
+
 }
